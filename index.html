@@ -13,7 +13,7 @@
 </head>
 <body>
   <h1>Smart Parking Dashboard</h1>
-  <div>Total: <span id="total">-</span> &nbsp; Available: <span id="avail">-</span></div>
+  <div>Total: <span id="total">-</span></div>
   <h3>Slots</h3>
   <div id="slots"></div>
   <h3>Events</h3>
@@ -23,13 +23,11 @@
   <script>
     const socket = io("https://duaniot-0yrv.onrender.com");
     const totalEl = document.getElementById('total');
-    const availEl = document.getElementById('avail');
     const slotsEl = document.getElementById('slots');
     const logEl = document.getElementById('log');
 
     function renderState(s){
       totalEl.textContent = s.total;
-      availEl.textContent = s.available;
       slotsEl.innerHTML = '';
       s.slots.forEach((v,i)=>{
         const d = document.createElement('div');
@@ -54,5 +52,6 @@
   </script>
 </body>
 </html>
+
 
 
