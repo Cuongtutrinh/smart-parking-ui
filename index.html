@@ -19,9 +19,9 @@
   <h3>Events</h3>
   <div id="log"></div>
 
-  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://duaniot-0yrv.onrender.com/socket.io/socket.io.js"></script>
   <script>
-    const socket = io();
+    const socket = io("https://duaniot-0yrv.onrender.com");
     const totalEl = document.getElementById('total');
     const availEl = document.getElementById('avail');
     const slotsEl = document.getElementById('slots');
@@ -47,7 +47,11 @@
     });
 
     // fetch initial state
-    fetch('/state').then(r=>r.json()).then(s=>renderState(s)).catch(e=>console.log(e));
+   fetch("https://duaniot-0yrv.onrender.com/state")
+    .then(r => r.json())
+    .then(s => renderState(s))
+    .catch(e => console.log(e));
   </script>
 </body>
 </html>
+
